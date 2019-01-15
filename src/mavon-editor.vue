@@ -202,6 +202,10 @@ export default {
         imageClick: {
             type: Function,
             default: null
+        },
+        valueTecalculation: {
+            type: Function,
+            default: null
         }
     },
     data() {
@@ -596,7 +600,8 @@ export default {
         },
         iRender() {
             var $vm = this;
-            $vm.$render($vm.d_value, function(res) {
+            var d_value = (valueTecalculation && valueTecalculation($vm.d_value)) || $vm.d_value;
+            $vm.$render(d_value, function(res) {
                 // render
                 $vm.d_render = res;
                 // change回调
