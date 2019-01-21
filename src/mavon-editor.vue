@@ -600,7 +600,7 @@ export default {
         },
         iRender() {
             var $vm = this;
-            var d_value = (valueTecalculation && valueTecalculation($vm.d_value)) || $vm.d_value;
+            var d_value = (this.valueTecalculation && this.valueTecalculation($vm.d_value)) || $vm.d_value;
             $vm.$render(d_value, function(res) {
                 // render
                 $vm.d_render = res;
